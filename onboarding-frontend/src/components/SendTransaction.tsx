@@ -3,17 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import { createSmartAccountClient } from 'permissionless';
 import { toSafeSmartAccount } from 'permissionless/accounts';
 import { createPublicClient, http, parseEther, encodeFunctionData, parseUnits } from 'viem';
-import { sepolia } from 'viem/chains';
+import { hoodi } from '../network';
 import { toWebAuthnAccount } from 'viem/account-abstraction';
 import { createPimlicoClient } from 'permissionless/clients/pimlico';
 import { entryPoint07Address } from 'viem/account-abstraction';
 
 const publicClient = createPublicClient({
-    transport: http('https://ethereum-sepolia-rpc.publicnode.com'),
-    chain: sepolia,
+    transport: http('https://rpc.hoodi.ethpandaops.io'),
+    chain: hoodi,
 });
 
-const pimlicoUrl = 'https://api.pimlico.io/v2/sepolia/rpc?apikey=public';
+const pimlicoUrl = 'https://api.pimlico.io/v2/hoodi/rpc?apikey=public';
 
 const erc20Abi = [
     {
@@ -82,7 +82,7 @@ const SendTransaction: React.FC = () => {
 
                         const smartClient = createSmartAccountClient({
                             account: safeAccount,
-                            chain: sepolia,
+                            chain: hoodi,
                             bundlerTransport: http(pimlicoUrl),
                             paymaster: pimlicoClient,
                             userOperation: {

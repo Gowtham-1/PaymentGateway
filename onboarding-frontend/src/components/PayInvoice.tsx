@@ -3,14 +3,14 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { createSmartAccountClient } from 'permissionless';
 import { toSafeSmartAccount } from 'permissionless/accounts';
 import { createPublicClient, http, encodeFunctionData } from 'viem';
-import { sepolia } from 'viem/chains';
+import { hoodi } from '../network';
 import { toWebAuthnAccount } from 'viem/account-abstraction';
 import { createPimlicoClient } from 'permissionless/clients/pimlico';
 import { entryPoint07Address } from 'viem/account-abstraction';
 import { config } from '../config';
 
-const publicClient = createPublicClient({ transport: http('https://ethereum-sepolia-rpc.publicnode.com'), chain: sepolia });
-const pimlicoUrl = 'https://api.pimlico.io/v2/sepolia/rpc?apikey=public';
+const publicClient = createPublicClient({ transport: http('https://rpc.hoodi.ethpandaops.io'), chain: hoodi });
+const pimlicoUrl = 'https://api.pimlico.io/v2/hoodi/rpc?apikey=public';
 
 // Replace with deployed Gateway Address
 const GATEWAY_CONTRACT_ADDRESS = '0xA1B2C3D4E5F67890123456789012345678901234';
@@ -91,7 +91,7 @@ const PayInvoice: React.FC = () => {
             });
 
             const smartClient = createSmartAccountClient({
-                account: safeAccount, chain: sepolia, bundlerTransport: http(pimlicoUrl), paymaster: pimlicoClient,
+                account: safeAccount, chain: hoodi, bundlerTransport: http(pimlicoUrl), paymaster: pimlicoClient,
                 userOperation: { estimateFeesPerGas: async () => (await pimlicoClient.getUserOperationGasPrice()).fast }
             });
 

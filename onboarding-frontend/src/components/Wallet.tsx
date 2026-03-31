@@ -3,18 +3,18 @@ import { useNavigate } from 'react-router-dom';
 import { createSmartAccountClient } from 'permissionless';
 import { toSafeSmartAccount } from 'permissionless/accounts';
 import { createPublicClient, http, toHex } from 'viem';
-import { sepolia } from 'viem/chains';
+import { hoodi } from '../network';
 import { toWebAuthnAccount } from 'viem/account-abstraction';
 import { createPimlicoClient } from 'permissionless/clients/pimlico';
 import { entryPoint07Address } from 'viem/account-abstraction';
 
 const publicClient = createPublicClient({
-    transport: http('https://ethereum-sepolia-rpc.publicnode.com'),
-    chain: sepolia,
+    transport: http('https://rpc.hoodi.ethpandaops.io'),
+    chain: hoodi,
 });
 
 // Using a public Pimlico paymaster for demo (this might be rate limited)
-const pimlicoUrl = 'https://api.pimlico.io/v2/sepolia/rpc?apikey=public';
+const pimlicoUrl = 'https://api.pimlico.io/v2/hoodi/rpc?apikey=public';
 
 interface WalletProps {
     walletAddress: string | null;
@@ -132,7 +132,7 @@ const Wallet: React.FC<WalletProps> = ({ walletAddress }) => {
 
             const smartClient = createSmartAccountClient({
                 account: safeAccount,
-                chain: sepolia,
+                chain: hoodi,
                 bundlerTransport: http(pimlicoUrl),
                 paymaster: pimlicoClient,
                 userOperation: {
@@ -192,7 +192,7 @@ const Wallet: React.FC<WalletProps> = ({ walletAddress }) => {
                         <div className="address-badge" onClick={() => navigator.clipboard.writeText(address)}>
                             {address.slice(0, 6)}...{address.slice(-4)}
                         </div>
-                        <p style={{ marginTop: '1rem', fontSize: '0.9rem' }}>Sepolia Network</p>
+                        <p style={{ marginTop: '1rem', fontSize: '0.9rem' }}>Hoodi Testnet</p>
                     </div>
 
                     <div className="transaction-section" style={{ alignItems: 'center', textAlign: 'center' }}>

@@ -113,7 +113,7 @@ const PaymentNotificationWidget: React.FC<PaymentNotificationWidgetProps> = ({ u
                     Dismiss
                 </button>
                 <a
-                    href={`${gatewayUrl}/pay/${notification.id}`}
+                    href={`${config.gatewayUrl}/pay/${notification.id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setNotification(null)}

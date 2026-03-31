@@ -1,4 +1,5 @@
 export const config = {
     onboardingBackendUrl: 'http://onboarding-backend:5000', // Docker internal communication
-    frontendUrl: 'https://sunday-fool-notices-lands.trycloudflare.com'
+    frontendUrl: 'https://wholesale-oldest-returning-professional.trycloudflare.com',
+    userWalletUrl: 'https://action-businesses-stuart-sing.trycloudflare.com' // Where passkey + wallet lives
 };

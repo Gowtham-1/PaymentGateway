@@ -37,7 +37,7 @@ export const triggerPaymentNotification = async (req: Request, res: Response): P
         const payload = JSON.stringify({
             title: 'New Payment Request',
             body: `You have a new request for ${amount} ${currency}`,
-            url: `${config.cloudflareUrl}/pay/${paymentId}`
+            url: `${config.userWalletUrl}/pay/${paymentId}`
         });
 
         const pushPromises = user.pushSubscriptions.map((sub: any) =>

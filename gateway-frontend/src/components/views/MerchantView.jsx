@@ -107,8 +107,8 @@ const MerchantView = () => {
                                                 onChange={(e) => handleInputChange('currency', e.target.value)}
                                                 className="absolute right-4 top-1/2 -translate-y-1/2 bg-transparent font-medium text-slate-500 focus:outline-none"
                                             >
-                                                <option value="USDC">USDC</option>
                                                 <option value="ETH">ETH</option>
+                                                <option value="USDC" disabled>USDC (not on Hoodi)</option>
                                             </select>
                                         </div>
                                     </div>

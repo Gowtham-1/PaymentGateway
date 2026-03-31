@@ -83,8 +83,8 @@ export const PaymentController = {
             io.emit('payment-created', newPayment);
         }
 
-        // In a real app, this link would point to the frontend route
-        const link = `${config.frontendUrl}/pay/${newPayment.id}`;
+        // Payment link now points to the user's wallet domain (where Passkey lives)
+        const link = `${config.userWalletUrl}/pay/${newPayment.id}`;
 
         res.status(201).json({
             success: true,

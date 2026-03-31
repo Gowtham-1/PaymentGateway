@@ -7,14 +7,14 @@ import { hoodi } from '../network';
 import { toWebAuthnAccount } from 'viem/account-abstraction';
 import { createPimlicoClient } from 'permissionless/clients/pimlico';
 import { entryPoint07Address } from 'viem/account-abstraction';
+import { config } from '../config';
 
 const publicClient = createPublicClient({
     transport: http('https://rpc.hoodi.ethpandaops.io'),
     chain: hoodi,
 });
 
-// Using a public Pimlico paymaster for demo (this might be rate limited)
-const pimlicoUrl = 'https://api.pimlico.io/v2/hoodi/rpc?apikey=public';
+const pimlicoUrl = config.pimlicoUrl;
 
 interface WalletProps {
     walletAddress: string | null;

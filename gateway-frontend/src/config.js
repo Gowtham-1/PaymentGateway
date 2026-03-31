@@ -1,4 +1,4 @@
 export const config = {
-    backendUrl: 'https://sunday-fool-notices-lands.trycloudflare.com',
-    cloudflareUrl: 'https://sunday-fool-notices-lands.trycloudflare.com'
+    backendUrl: 'https://wholesale-oldest-returning-professional.trycloudflare.com',
+    cloudflareUrl: 'https://wholesale-oldest-returning-professional.trycloudflare.com'
 };

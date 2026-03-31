@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 export const useMerchantForm = () => {
     const [formData, setFormData] = useState({
         amount: '',
-        currency: 'USDC',
+        currency: 'ETH',
         description: '',
         customerEmail: ''
     });

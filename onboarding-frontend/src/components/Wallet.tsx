@@ -24,7 +24,7 @@ const Wallet: React.FC<WalletProps> = ({ walletAddress }) => {
     const navigate = useNavigate();
     const [address, setAddress] = useState<string>('');
     const [status, setStatus] = useState<string>('');
-    const [smartAccountClient, setSmartAccountClient] = useState<any>(null);
+    const [, setSmartAccountClient] = useState<any>(null);
 
     useEffect(() => {
         if (walletAddress) {

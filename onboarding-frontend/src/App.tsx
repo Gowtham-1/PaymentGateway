@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import SendTransaction from './components/SendTransaction';
+import PayInvoice from './components/PayInvoice';
 import Layout from './components/Layout';
 import PaymentNotificationWidget from './components/PaymentNotificationWidget';
 import './App.css';
@@ -107,6 +108,7 @@ function App() {
           <Route element={<Layout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/send" element={<SendTransaction />} />
+            <Route path="/pay/:id" element={<PayInvoice />} />
           </Route>
         </Routes>
       </Router>

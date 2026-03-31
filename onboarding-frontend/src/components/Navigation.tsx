@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { config } from '../config';
 
 const Navigation: React.FC = () => {
-    const navigate = useNavigate();
+    // Removed unused navigate
 
     const handleLogout = () => {
         window.location.href = `${config.backendUrl}/auth/logout`;

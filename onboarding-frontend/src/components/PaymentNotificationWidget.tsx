@@ -112,10 +112,11 @@ const PaymentNotificationWidget: React.FC<PaymentNotificationWidgetProps> = ({ u
                 >
                     Dismiss
                 </button>
-                <a
-                    href={`${config.cloudflareUrl}/pay/${notification.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <button
+                    onClick={() => {
+                        setNotification(null);
+                        window.location.href = `/pay/${notification.id}`;
+                    }}
                     style={{
                         flex: 1,
                         padding: '10px',
@@ -125,11 +126,13 @@ const PaymentNotificationWidget: React.FC<PaymentNotificationWidgetProps> = ({ u
                         textDecoration: 'none',
                         textAlign: 'center',
                         fontWeight: '500',
-                        display: 'block'
+                        display: 'block',
+                        border: 'none',
+                        cursor: 'pointer'
                     }}
                 >
                     Pay Now
-                </a>
+                </button>
             </div>
         </div>
     );

@@ -13,7 +13,7 @@ const publicClient = createPublicClient({ transport: http('https://rpc.hoodi.eth
 const pimlicoUrl = 'https://api.pimlico.io/v2/hoodi/rpc?apikey=public';
 
 // Replace with deployed Gateway Address
-const GATEWAY_CONTRACT_ADDRESS = '0xA1B2C3D4E5F67890123456789012345678901234';
+const GATEWAY_CONTRACT_ADDRESS = '0xF3464f9Add507619Fa49d52Fb035cD2D5EA2AB7E'; // Deployed on Hoodi
 
 const gatewayAbi = [
     {

@@ -1,4 +1,4 @@
 export const config = {
-    backendUrl: 'https://llp-yoga-cardiac-inter.trycloudflare.com',
-    cloudflareUrl: 'https://llp-yoga-cardiac-inter.trycloudflare.com'
+    backendUrl: 'https://sunday-fool-notices-lands.trycloudflare.com',
+    cloudflareUrl: 'https://sunday-fool-notices-lands.trycloudflare.com'
 };
